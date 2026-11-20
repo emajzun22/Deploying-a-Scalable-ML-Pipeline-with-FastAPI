@@ -1,4 +1,3 @@
-import pytest
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
 from ml.data import apply_label
@@ -9,7 +8,6 @@ def test_apply_label():
     """Tests that apply_label maps binary predictions to salary strings."""
     assert apply_label(np.array([1])) == ">50K"
     assert apply_label(np.array([0])) == "<=50K"
-
 
 
 def test_train_and_inference():
@@ -23,7 +21,6 @@ def test_train_and_inference():
     assert preds.shape == y_train.shape
 
 
-
 def test_compute_model_metrics():
     """Tests that compute_model_metrics returns expected precision, recall, and F1."""
     y_true = np.array([1, 1, 0, 0])
@@ -32,4 +29,3 @@ def test_compute_model_metrics():
     assert precision == 1.0
     assert recall == 0.5
     assert np.isclose(fbeta, 2 / 3)
-

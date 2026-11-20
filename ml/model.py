@@ -4,6 +4,8 @@ from ml.data import process_data
 from sklearn.ensemble import GradientBoostingClassifier
 
 # Optional: implement hyperparameter tuning.
+
+
 def train_model(X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -22,7 +24,6 @@ def train_model(X_train, y_train):
     model = GradientBoostingClassifier(random_state=42)
     model.fit(X_train, y_train)
     return model
-
 
 
 def compute_model_metrics(y, preds):
@@ -82,7 +83,6 @@ def load_model(path):
     """ Loads pickle file from `path` and returns it."""
     with open(path, "rb") as f:
         return pickle.load(f)
-
 
 
 def performance_on_categorical_slice(
